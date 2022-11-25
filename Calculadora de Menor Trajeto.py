@@ -3,10 +3,9 @@ import matplotlib.pyplot as plt
 
 # Função que gera o objeto Graph e constroi sua representação visual
 def GerarGrafo(grafoDic):
-    # Cria um objeto grafo
+    # Cria um objeto grafo.
     grafo = nx.Graph()
     
-    # Cria as Edges no objeto grafo com base no grafo-dicionario passado como parâmetro
     for key in grafoDic:
         for i in grafoDic[key]:
             grafo.add_edge(key, i[0], weight=i[1])
