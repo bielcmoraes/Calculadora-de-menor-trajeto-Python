@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Função que gera o objeto Graph e constroi sua representação visual
 def GerarGrafo(grafoDic):
-    # Cria um objeto grafo.
+    # Cria um objeto grafo
     grafo = nx.Graph()
     
     for key in grafoDic:
