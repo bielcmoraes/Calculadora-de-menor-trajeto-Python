@@ -3,13 +3,14 @@ import matplotlib.pyplot as plt
 
 # Função que gera o objeto Graph e constroi sua representação visual
 def GerarGrafo(grafoDic):
-    # Cria um objeto grafo.
+    # Cria um objeto grafo
     grafo = nx.Graph()
-    
+
+    # Cria as Edges no objeto grafo com base no grafo-dicionario passado como parâmetro
     for key in grafoDic:
         for i in grafoDic[key]:
             grafo.add_edge(key, i[0], weight=i[1])
-            
+
     # Desenha o grafo
     nx.draw(grafo, with_labels=True,  node_size=5000)
     plt.show()
@@ -31,7 +32,7 @@ def MenorCaminho(graph, start, end):
     # Cria um objeto grafo
     grafo = nx.Graph()
     grafoAux = nx.Graph()
-    
+
     # Cria as Edges no objeto grafo com base no grafo-dicionario passado como parâmetro
     for key in graph:
         for i in graph[key]:
@@ -42,10 +43,10 @@ def MenorCaminho(graph, start, end):
 
     for i in range(len(menorPath) - 1):
         grafoAux.add_edge(menorPath[i], menorPath[i+1])
-        
+
     nx.draw(grafoAux, with_labels=True,  node_size=5000)
     plt.show()
-    
+
 
 # View da função de cadastrar mais cidades     
 def solicitarDadosCadastroCidades():
@@ -99,7 +100,7 @@ while not sairMenu:
         print("[3] -> Gerar Grafo")
         print("[4] -> Sair")
         opcao = int(input("\nOpção desejada: "))
-        
+
     except ValueError:
         print("Opção inválida. Tente novamente!")
     else:
